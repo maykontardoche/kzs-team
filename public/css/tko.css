@@ -132,9 +132,10 @@ a:hover {
 
 /* Imagem no topo do card */
 .team .card-img-top {
-  height: 220px;
+  width: 100%; 
+  height: 300px; 
   object-fit: cover;
-  border-top-left-radius: 10px;
+  border-top-left-radius: 10px; 
   border-top-right-radius: 10px;
 }
 
@@ -161,8 +162,11 @@ a:hover {
 }
 
 .smaller-card .card-img-top {
-  height: 120px; /* Reduz tamanho da imagem */
-  width: auto;
+  width: 100%; 
+  height: 300px; 
+  object-fit: cover; 
+  border-top-left-radius: 10px; 
+  border-top-right-radius: 10px;
 }
 
 .smaller-card .card-title {
@@ -278,9 +282,18 @@ a:hover {
   border-top-right-radius: 10px;
 }
 
+.livestream-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espaça os elementos dentro do card */
+  height: 100%; /* Todos os cards terão a mesma altura */
+}
+
 .livestream-card .card-body {
-  text-align: center; /* Centraliza o conteúdo */
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Faz com que o conteúdo seja distribuído uniformemente */
+  align-items: center;
 }
 
 .livestream-card .card-title {
@@ -306,6 +319,21 @@ a:hover {
   background-color: #d81b1b;
   box-shadow: 0 0 10px rgba(255, 46, 46, 0.7);
 }
+
+.livestream-card .btn {
+  margin-top: 10px; /* Adiciona um pequeno espaço entre o botão e o texto acima */
+  align-self: stretch; /* Faz o botão ocupar toda a largura do card */
+  text-align: center; /* Centraliza o texto do botão */
+}
+
+.livestream-card .card-img-top {
+  width: 100%; /* A largura da imagem será ajustada ao container */
+  height: 400px; /* Altura fixa para todas as imagens */
+  object-fit: cover; /* Faz com que a imagem preencha o espaço sem distorcer */
+  border-top-left-radius: 10px; /* Mantém o arredondamento nos cantos */
+  border-top-right-radius: 10px; /* Mantém o arredondamento nos cantos */
+}
+
 
 /* -------------------------------------------------
    Contato
