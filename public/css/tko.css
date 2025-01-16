@@ -177,6 +177,56 @@ a:hover {
   font-size: 0.9rem; /* Fonte menor */
 }
 
+
+
+/* Espaçamento adicional entre linhas */
+#team .row.g-4 {
+  margin-bottom: 20px; /* Espaçamento entre a primeira linha e o botão de vidro */
+}
+
+.glass-effect {
+  position: relative;
+  margin-top: 50px; /* Espaçamento entre a última linha visível e o vidro */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+#extraTeam {
+  margin-top: 30px; /* Espaçamento quando expandido */
+}
+
+/* Garante um espaçamento maior quando a segunda linha estiver expandida */
+#extraTeam .row {
+  margin-top: 20px;
+}
+.glass-effect:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ff2e2e;
+}
+
+.glass-effect span {
+  position: relative;
+}
+
+.glass-effect::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  z-index: -1;
+}
+
 /* -------------------------------------------------
    OBJECTIVES SECTION
 --------------------------------------------------- */
