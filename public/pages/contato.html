@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Entre em contato com KZS - Kaos Squad" />
+    <meta name="keywords" content="KZS, Kaos Squad, Contato, Gaming, Equipe" />
+    <meta name="author" content="KZS" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato - KZS Kaos Squad</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/tko.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-skull-crossbones text-danger"></i> KZS
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fa-solid fa-bars text-light"></i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./tko-warzone.html">Home</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Seção de Contato -->
+    <section class="contact-section py-5 bg-dark text-light" id="contact">
+        <div class="container">
+            <h2 class="text-center mb-4" data-aos="fade-up">Entre em Contato</h2>
+            <p class="text-center lead mb-4" data-aos="fade-up" data-aos-delay="100">
+                Tem alguma dúvida, sugestão ou quer colaborar com o KZS - Kaos Squad? Entre em contato conosco através
+                do formulário abaixo ou por nossas redes sociais!
+            </p>
+
+            <!-- Formulário de Contato -->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form id="contactForm" class="bg-dark p-4 rounded shadow-lg" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="Digite seu e-mail" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="message" name="message" rows="4"
+                                placeholder="Escreva sua mensagem" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-discord mt-3">
+                                Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Informações de Contato -->
+            <div class="row text-center mt-5" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-md-4">
+                    <i class="fa-solid fa-envelope fa-2x mb-2"></i>
+                    <h5>Email</h5>
+                    <p>contato@kaossquad.com</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fa-solid fa-phone fa-2x mb-2"></i>
+                    <h5>Telefone</h5>
+                    <p>(11) 99999-9999</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fa-solid fa-map-marker-alt fa-2x mb-2"></i>
+                    <h5>Localização</h5>
+                    <p>São Paulo, Brasil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section py-3 bg-dark text-center">
+        <p class="footer-text">
+            &copy; 2024 KZS - Kaos Squad | Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <!-- JS (Bootstrap + AOS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+
+    <!-- Webhook Script -->
+    <script>
+        const webhookURL = "https://discord.com/api/webhooks/1322369888026890240/OLmbXhyEVDO7ws6l9HyQiXVrTYS-noIAuKBtQznw0AMTfG-yEpseWHkAcaDKmmdTX9ZS"; // Substitua pela URL do seu Webhook
+
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Impede o envio padrão do formulário
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // Corpo do embed no formato JSON
+            const payload = {
+                embeds: [
+                    {
+                        title: "Nova Mensagem de Contato",
+                        color: 16711680, // Cor do embed (vermelho em hexadecimal)
+                        fields: [
+                            { name: "Nome", value: name, inline: true },
+                            { name: "E-mail", value: email, inline: true },
+                            { name: "Mensagem", value: message, inline: false },
+                        ],
+                        footer: {
+                            text: "Enviado através do site Kaos Squad",
+                        },
+                    },
+                ],
+            };
+
+            // Enviar a mensagem ao webhook
+            fetch(webhookURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        alert("Mensagem enviada com sucesso!");
+                        document.getElementById("contactForm").reset(); // Limpa o formulário
+                    } else {
+                        alert("Erro ao enviar a mensagem. Tente novamente mais tarde.");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Erro ao enviar:", error);
+                    alert("Erro ao enviar a mensagem. Tente novamente mais tarde.");
+                });
+        });
+    </script>
+</body>
+
+</html>
