@@ -482,19 +482,19 @@
       once: true,
     });
   </script>
-<script>
-  document.getElementById("toggleGlass").addEventListener("click", function () {
-    const extraTeam = document.getElementById("extraTeam");
+  <script>
+    document.getElementById("toggleGlass").addEventListener("click", function () {
+      const extraTeam = document.getElementById("extraTeam");
 
-    if (extraTeam.classList.contains("collapse")) {
-      extraTeam.classList.remove("collapse");
-      this.querySelector("span").textContent = "Clique aqui para esconder";
-    } else {
-      extraTeam.classList.add("collapse");
-      this.querySelector("span").textContent = "Clique aqui para ver o time Completo";
-    }
-  });
-</script>
+      if (extraTeam.classList.contains("collapse")) {
+        extraTeam.classList.remove("collapse");
+        this.querySelector("span").textContent = "Clique aqui para esconder";
+      } else {
+        extraTeam.classList.add("collapse");
+        this.querySelector("span").textContent = "Clique aqui para ver o time Completo";
+      }
+    });
+  </script>
 
 
 </body>
